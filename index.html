@@ -1,0 +1,181 @@
+<!--
+    Programming Paradigmalar:
+    Imperative Programming Paradigma
+     1.Procedual Programming Paradigma
+     2.Objective Oriented Paradigma
+     3.Paralel Processing Paradigma
+
+    Declarative Programming Paradigma
+    1.Logic Programming 
+    2.Functional Programming
+    3.Database Processing Approach
+
+
+    OOP prinsipleri :
+    Inheritance - Varislik
+    public class A {
+
+    }
+    public class B {
+        public int x;
+        public int y;
+      public B() {
+          this.x = 2 ;
+          this.y = 4 ;
+      } 
+      public void calculate () {
+          System.out.println("Parent class" + (this.x + this.y));
+      } 
+    }
+    Eger A sinifi child sinif olarsa ,
+    public clas A extends B {
+
+    }
+    A sinifinin obyektini yaradaq ve main metodunu cagiraq ,
+       public class Main {
+           public static void man (String[] args){
+               A a=new A();
+               a.calculate();
+           }
+       }
+   A sinfimizi calculate adli methodla teyin etmemisik.
+   Ancaq A sinfinin obyektini yaratmaqla calculate() methodunu cagira bilerik.
+   A sinifi B sinfinin xususiyyetlerini ozunde goturub.
+   extends sozunden istfade olunur varislik edende!!
+
+   Encapsulation - Access modifier movzusunda private parametrine bitbasa muraciet etmek olmaz,dolayi yolla ede bilerik.
+   Bu yol kapsullamadir.
+   Encapsulation tekce sinifin parametrlerine access yox geri donderilen informasiyani strukdurlasdirir.
+   public class Encapsulation {
+    private int x;
+    private int y;
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+}
+get,set metodlarindan istf ederek dolayi yolla private olaraq 
+teyin olunmus x ve y deyisenlerini el catan etdik.
+məlumatın alınması və ötürləməsi üçün get set metodlarından istifadə etmiş olduq.
+
+
+Abstraction - Sinif yaradarken bu sinifi diger bir sinifden
+extend eden zaman bu sinif hemin sinifin xasselerini
+ozunde goturur.Abstract sinfin heç bir xüsusiyyəti private ola bilməz. 
+Abstarct sinfidə heç bir iş görülmür sadəcə olaraq bir növ qanunlar qoyulur və bu qanunları varis yerinə yetirir.
+Eyni zamanda əgər abstract sinifdə dəyikşən təyin olunubsa o zaman varis sinifdə həmin dəyişən birbaşa istifadə olunur. \
+
+Abstrakiyanın bəzi üstünlükləri aşağıdakılardır:
+
+1.Kodda qarışılığı aradan qaldırılmasına kömək edir.
+
+2. Kodda dublikatlığı azaltır və təkar istifadə oluna bilməsini artırır.
+
+3. Ancaq lazım olan xassələri göstərməklə application təhlükəsizliyini artırır.
+
+
+
+Polymorphism(Polimorfizm, Çox formalılıq)- Abstarksiyaya oxşasa da abstraksiya deyil. 
+Aralarında kəskin fərq var.
+
+Abstract sinifdən obyekt yaradıla bilməz.
+Abstract sinfin metodlarının içərisi boş olur. Sadəcə metodun skleti olur.
+Amma polimorifzm-də əsas götürülən(parent) sinif real sinifdir.
+ Abstract sinif deyil yəni. 
+Polimorifzmdə parent sinfin bütün xassələri istifadə olunmaya bilər. 
+Polimorfizmin əsas məqsədi tək obyekt üzərindən child və parent sinfin xüsusiyyətlərindən istifadə edə bilməkdir. 
+Eyni zamanda lazım olan metodlari override edərək də istifadə edə bilərik.
+
+public class Animal {
+    public int age;
+
+    public void showAge() {
+        System.out.println(this.age);
+    }
+}
+class Dog extends Animal {
+    public Dog() {
+        this.age = 6;
+    }
+
+    @Override
+    public void showAge() {
+        System.out.println(this.age);
+    }
+
+    public void run() {
+        System.out.println("Dog running");
+    }
+}
+public class Cow extends Animal {
+    public Cow() {
+        this.age = 10;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Dog dog=new Dog();
+        dog.showAge();
+        dog.run();
+
+        Cow cow=new Cow();
+        cow.showAge();
+    }
+}
+
+
+Method Override və Overloading :
+Bu iki anlayışı bir-biri ilə qarışdırmaq olmaz.
+Bunlar proqramladırmada fərqli yanaşmalardır.
+ Overloding-Methodun adini eyni qalmaqla parametrlerine gore yeni methodlar yaradilir.
+ Ustunluyu ferqli adli methodun yaradilmasidir.
+ public class B {
+     void show () {
+         System.out.println("1 ci method")
+     }
+     void show (int x) {
+         System.out.println(x);
+     }
+     void show (int x , int y) {
+         System.out.println(x+" : "+y);
+     }
+ }
+ Override-Bir methodun tekrardan yazilmasi demekdir.
+ public class Animal {
+    public int age;
+
+    public void showAge() {
+        System.out.println(this.age);
+    }
+}
+class Dog extends Animal {
+    public Dog() {
+        this.age = 6;
+    }
+
+    @Override
+    public void showAge() {
+        System.out.println(this.age);
+    }
+
+}
+burada showAge() metoduna baxaq. 
+Bu metod hem Animal həm də onun sub-class-ı olan Dog sinfində yardılmışdır.
+ Dog sinfində yardılan showAge() metodu override olunan metoddur. 
+ Override metodda metodun body-sini özümüzə lazım olan şəkildə kodlayırıq.
+ Override metodları @Override işarəsi ilə də göstərə bilirik.
+
+
+-->
